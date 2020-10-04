@@ -173,7 +173,8 @@ var P = (function() {
   //IO.PROJECT_URL = 'http://projects.scratch.mit.edu/internalapi/project/';
   IO.PROJECT_URL = 'http://projects.scratch.mit.edu/';
   IO.ASSET_URL = 'http://cdn.assets.scratch.mit.edu/internalapi/asset/';
-  IO.SOUNDBANK_URL = 'https://cdn.rawgit.com/LLK/scratch-flash/v429/src/soundbank/';
+ // IO.SOUNDBANK_URL = 'https://cdn.rawgit.com/LLK/scratch-flash/v429/src/soundbank/';
+  IO.SOUNDBANK_URL = 'https://raw.githubusercontent.com/LLK/scratch-flash/master/src/soundbank/';
 
   IO.FONTS = {
     '': 'Helvetica',
@@ -294,7 +295,7 @@ var P = (function() {
 
     request.defer = true;
     //request.add(P.IO.load('http://crossorigin.me/http://scratch.mit.edu/projects/' + id + '/').onLoad(function(data) {
-	 request.add(P.IO.load('http://crossorigin.me/http://scratch.mit.edu/projects/' + id + '/').onLoad(function(data) {
+	 request.add(P.IO.load('http://scratch.mit.edu/projects/' + id + '/').onLoad(function(data) {
       var m = /<title>\s*(.+?)(\s+on\s+Scratch)?\s*<\/title>/.exec(data);
       if (callback) request.onLoad(callback.bind(self));
       if (m) {
